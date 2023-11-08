@@ -1,0 +1,101 @@
+@use "../../app/variables.scss";
+
+.music {
+  width: 80vw;
+  margin: 1rem auto;
+  list-style: none;
+
+  &__vote {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: variables.$font-color;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--garamond);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    audio {
+      display: none;
+    }
+  }
+
+  &__player {
+    &__controls {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      width: 15px;
+      height: 15px;
+      svg {
+        width: 15px;
+        height: 15px;
+        fill: variables.$accent-color;
+        cursor: pointer;
+      }
+    }
+
+    &__background {
+      width: 80%;
+      height: 5px;
+      background-color: variables.$darkened-accent-color;
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    &__progress {
+      width: 0%;
+      height: 100%;
+      background-color: variables.$accent-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 20%;
+    }
+  }
+
+  &__text {
+    h3 {
+      color: variables.$accent-color;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: var(--abril);
+    }
+    p {
+      color: variables.$font-color;
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: var(--garamond);
+    }
+  }
+}

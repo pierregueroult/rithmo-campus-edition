@@ -1,0 +1,31 @@
+@use "../../app/variables.scss";
+
+.article {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &:last-of-type {
+    margin-bottom: 150px;
+  }
+}
+
+.label {
+  width: 13vw;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--abril);
+  color: variables.$font-color;
+  font-size: 1.4rem;
+  user-select: none;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.list {
+  width: 87vw;
+}

@@ -1,0 +1,91 @@
+@use "../variables.scss";
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    background-color: variables.$accent-color;
+    height: 2px;
+    border-radius: 1px;
+    bottom: 10%;
+    left: 5%;
+  }
+}
+
+.list {
+  width: 90vw;
+  margin: 0 auto;
+  list-style: none;
+  color: variables.$font-color;
+
+  .version {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: var(--garamond);
+
+    a {
+      color: variables.$font-color;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 4vw;
+
+  button,
+  a {
+    width: 43vw;
+    padding: 0.8rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid variables.$accent-color;
+    background-color: transparent;
+    color: variables.$font-color;
+    font-family: var(--abril);
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+
+.legal {
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  background-color: variables.$accent-color;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  h2 {
+    font-family: var(--abril);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: variables.$background-color;
+  }
+
+  p {
+    font-family: var(--garamond);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: variables.$background-color;
+    font-weight: 700;
+  }
+}

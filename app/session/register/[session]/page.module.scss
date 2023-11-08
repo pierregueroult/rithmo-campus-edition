@@ -1,0 +1,21 @@
+@use "../../../variables.scss";
+
+.title {
+  width: 100vw;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: var(--abril);
+  color: variables.$font-color;
+  margin-top: 5rem;
+}
+
+.description {
+  width: 80vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: var(--garamond);
+  color: variables.$font-color;
+  margin-top: 2rem;
+}

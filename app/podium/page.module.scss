@@ -1,0 +1,99 @@
+@use "../variables.scss";
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100vw;
+}
+
+.container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.aside {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    margin: 0.5rem 5% 0.5rem 0 !important;
+    width: 95% !important;
+  }
+}
+
+.title {
+  color: variables.$font-color;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  bottom: 0.7rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    background-color: variables.$accent-color;
+    height: 2px;
+    border-radius: 1px;
+    bottom: -40%;
+    left: 50%;
+    animation: growWidth 500ms 200ms ease-in-out forwards;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes growWidth {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+
+.listEmoji {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.emoji {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+
+  &:first-child {
+    margin-top: 0.5rem;
+  }
+}
+
+.text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.4rem;
+  color: variables.$font-color;
+  font-family: var(--abril);
+  user-select: none;
+  margin-top: 8vh;
+  transform: rotate(180deg);
+}

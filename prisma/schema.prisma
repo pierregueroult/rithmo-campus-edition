@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Music {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  spotifyId String @unique
+  title String
+  artist String
+  imageCover String
+  previewUrl String
+  count Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  status Status @default(WAITING)
+  session Session @relation(fields: [sessionId], references: [id])
+  sessionId String @db.ObjectId
+  votes Vote[]
+  emoji String
+}
+
+model Vote {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  music Music @relation(fields: [musicId], references: [id])
+  musicId String @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Status {
+  WAITING
+  PLAYED
+}
+
+enum SessionStatus {
+  PUBLIC
+  PRIVATE
+}
+
+model Session {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  code String @unique
+  status SessionStatus @default(PUBLIC)
+  title String 
+  musics Music[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

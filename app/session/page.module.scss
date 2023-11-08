@@ -1,0 +1,77 @@
+@use "../variables.scss";
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    background-color: variables.$accent-color;
+    height: 2px;
+    border-radius: 1px;
+    bottom: 10%;
+    left: 5%;
+  }
+}
+
+.sessionList {
+  list-style: none;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: var(--abril);
+  color: variables.$font-color;
+}
+
+.session {
+  width: 90%;
+  margin: 0 auto;
+  background-color: variables.$accent-color;
+  border-radius: 30px;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: var(--abril);
+    color: variables.$background-color;
+    padding: 1rem 1.5rem;
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--garamond);
+    color: variables.$background-color;
+    font-weight: 700;
+    padding: 1rem;
+  }
+}
+
+.legal {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 0.8rem;
+  text-align: center;
+  font-family: var(--garamond);
+  color: variables.$font-color;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,26 @@
+@use "../../app/variables.scss";
+
+.button {
+  background-color: variables.$accent-color;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  outline: none;
+  color: variables.$background-color;
+  font-family: var(--abril);
+  font-size: 1.2rem;
+  max-width: 70vw;
+  cursor: pointer;
+
+  &:first-of-type {
+    background-color: variables.$darkened-accent-color;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 90vw;
+}

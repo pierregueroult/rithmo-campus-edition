@@ -1,0 +1,29 @@
+@use "../../app/variables.scss";
+
+.aside {
+  width: 13vw;
+  height: auto;
+  min-height: 68vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.container {
+  display: flex;
+}
+
+.texte {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--abril);
+  color: variables.$font-color;
+  font-size: 1.4rem;
+  user-select: none;
+}
+
+.list {
+  width: 85vw;
+}

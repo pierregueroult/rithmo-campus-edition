@@ -1,0 +1,27 @@
+@use "../../app/variables.scss";
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.searchInput {
+  width: 85vw;
+  height: 50px;
+  padding: 10px;
+  border: variables.$accent-color solid 2px;
+  border-radius: 10px;
+  background-color: variables.$background-color;
+  color: variables.$font-color;
+  outline: none;
+  font-family: var(--abril);
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.searchResults {
+  width: 100vw;
+  transition: height 0.5s ease-in-out;
+}

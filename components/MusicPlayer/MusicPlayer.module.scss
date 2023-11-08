@@ -1,0 +1,34 @@
+@use "../../app/variables.scss";
+
+.playpause {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  svg {
+    width: 20px;
+    height: 20px;
+    color: variables.$accent-color;
+  }
+}
+
+.background {
+  width: 70vw;
+  height: 7px;
+  background-color: variables.$darkened-accent-color;
+  border-radius: 5px;
+
+  .progress {
+    width: 0%;
+    height: 100%;
+    background-color: variables.$accent-color;
+    border-radius: 5px;
+  }
+}
+
+.preview {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}

@@ -1,0 +1,56 @@
+@use "../../app/variables.scss";
+
+.voteTexte {
+  font-family: var(--garamond);
+  color: variables.$font-color;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emojis {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 40px);
+  gap: 0.5rem;
+  margin: 1rem auto;
+  width: fit-content;
+  justify-items: center;
+  align-items: center;
+}
+
+.emoji {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$darkened-accent-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: variables.$background-color;
+  }
+}
+
+.active {
+  background-color: variables.$accent-color;
+}
+
+.margins {
+  margin-bottom: 1rem;
+  width: 100% !important;
+}
