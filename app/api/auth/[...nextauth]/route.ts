@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import sha256 from "sha256";
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       type: "credentials",
@@ -19,9 +19,8 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         const user = {
           id: 1,
-          name: "labete-admin",
-          password:
-            "915342d9e170681dba92aa4280fe6d84c0fb682250a9c7da0bb805dcbe5d646e",
+          name: process.env.ADMIN_USERNAME!,
+          password: sha256(process.env.ADMIN_PASSWORD!),
         };
         if (
           credentials?.username === user.name &&

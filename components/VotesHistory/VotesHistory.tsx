@@ -15,7 +15,7 @@ export default function VotesHistory({ add }: VotesHistoryProps) {
 
   useEffect(() => {
     var session = localStorage.getItem("session");
-    if (!session) throw new Error("No session found");
+    if (!session) router.push("/session");
 
     async function addMusicToStorage() {
       var lastvoteTime: string | null = localStorage.getItem("vote");

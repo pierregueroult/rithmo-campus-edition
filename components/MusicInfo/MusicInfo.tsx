@@ -5,12 +5,10 @@ import { Music } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Color from "color-thief-react";
 
 export default function MusicInfo() {
   const [isMusicOn, setIsMusicOn] = useState(false);
   const [mostVotedMusic, setMostVotedMusic] = useState<Music>();
-  const [color, setColor] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     function listener() {
@@ -37,25 +35,10 @@ export default function MusicInfo() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    if (!color) return;
-    document.documentElement.style.setProperty("--color", color);
-  }, [color]);
-
   return (
     <aside className={`${styles.container} ${isMusicOn && styles.showing}`}>
       {mostVotedMusic && (mostVotedMusic as Music) && (
         <div className={styles.innerContainer}>
-          <Color
-            src={mostVotedMusic.imageCover}
-            crossOrigin="anonymous"
-            format="hex"
-          >
-            {({ data, loading, error }) => {
-              setColor(data);
-              return <></>;
-            }}
-          </Color>
           <div className={styles.description}>
             <motion.div
               initial={{ rotate: 0 }}

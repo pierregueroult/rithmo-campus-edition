@@ -1,8 +1,27 @@
-export default function Admin(): JSX.Element {
+import Layout from "@/components/Layout/Layout";
+import prisma from "@/prisma/prisma";
+
+async function getAllMusics() {
+  return prisma.music.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+}
+
+export default async function Admin(): Promise<JSX.Element> {
+  const musics = await getAllMusics();
   return (
-    <div>
+    <Layout>
       <h1>Admin</h1>
-      <p>This is the admin page.</p>
-    </div>
+      <p>Gérez les musiques votées ici</p>
+      <ul>
+        {musics.map((music) => (
+          <li key={music.id}>
+            {music.title} - {music.artist}
+          </li>
+        ))}
+      </ul>
+    </Layout>
   );
 }
